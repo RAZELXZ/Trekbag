@@ -1,8 +1,10 @@
 import React from "react";
+import EmptyView from "./EmptyView";
 
 const ItemLits = ({ iltst, handleDeleteItem, handleToggleItem }) => {
   return (
-    <ul>
+    <ul className="item-list">
+      {iltst.length === 0 ? <EmptyView /> : null}
       {iltst.map((item) => {
         return (
           <Item
