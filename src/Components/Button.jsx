@@ -1,8 +1,11 @@
 import React from "react";
 
-const Button = ({ type, text }) => {
+const Button = ({ type, text, onDeleteAllItems }) => {
   return (
-    <button className={`btn ${type === "secondary" ? "btn--secondary" : ""}`}>
+    <button
+      onClick={onDeleteAllItems}
+      className={`btn ${type === "secondary" ? "btn--secondary" : ""}`}
+    >
       {" "}
       {text}{" "}
     </button>

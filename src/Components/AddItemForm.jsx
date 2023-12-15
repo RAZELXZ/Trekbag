@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Button from "./Button";
 
-const AddItemForm = ({ setIlist }) => {
+const AddItemForm = ({ onAddItem }) => {
   const inputRef = useRef();
   const [value, setValue] = useState("");
   const handelSubmit = (e) => {
@@ -12,13 +12,7 @@ const AddItemForm = ({ setIlist }) => {
       inputRef.current.focus();
       return;
     }
-
-    const newItem = {
-      id: new Date().getTime(),
-      name: value,
-      packed: false,
-    };
-    setIlist((prev) => [...prev, newItem]);
+    onAddItem(value);
     setValue("");
   };
   return (

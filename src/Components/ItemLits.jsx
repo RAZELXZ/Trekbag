@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { itemList } from "../lib/constants";
+import React from "react";
 
 const ItemLits = ({ iltst }) => {
   return (

@@ -2,11 +2,11 @@ import React from "react";
 import AddItemForm from "./AddItemForm";
 import ButtonGroup from "./ButtonGroup";
 
-const Sidebar = ({ setIlist }) => {
+const Sidebar = ({ handleAddItem, handleDeleteAllItems }) => {
   return (
     <div className="sidebar">
-      <AddItemForm setIlist={setIlist} />
-      <ButtonGroup />
+      <AddItemForm onAddItem={handleAddItem} />
+      <ButtonGroup handleDeleteAllItems={handleDeleteAllItems} />
     </div>
   );
 };
