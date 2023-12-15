@@ -1,12 +1,6 @@
 import React from "react";
 import Button from "./Button";
-
-const secondaryText = [
-  "Mark all as complete",
-  "Mark all as incomplete",
-  "Reset to initial",
-  "Remove all items",
-];
+import { secondaryText } from "../lib/constants";
 
 const ButtonGroup = () => {
   return (
