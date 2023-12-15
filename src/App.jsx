@@ -1,5 +1,24 @@
+import BackgroundHeading from "./Components/BackgroundHeading";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import ItemLits from "./Components/ItemLits";
+import Sidebar from "./Components/Sidebar";
+import "./index.css";
+
 function App() {
-  return <h1> test </h1>;
+  return (
+    <>
+      <BackgroundHeading />
+
+      <main>
+        <Header />
+        <ItemLits />
+        <Sidebar />
+      </main>
+
+      <Footer />
+    </>
+  );
 }
 
 export default App;
