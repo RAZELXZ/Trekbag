@@ -6,8 +6,7 @@ const Button = ({ type, text, onClick }) => {
       onClick={onClick}
       className={`btn ${type === "secondary" ? "btn--secondary" : ""}`}
     >
-      {" "}
-      {text}{" "}
+      {text}
     </button>
   );
 };
