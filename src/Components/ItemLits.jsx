@@ -4,7 +4,7 @@ import EmptyView from "./EmptyView";
 const ItemLits = ({ iltst, handleDeleteItem, handleToggleItem }) => {
   return (
     <ul className="item-list">
-      {iltst.length === 0 ? <EmptyView /> : null}
+      {iltst.length === 0 && <EmptyView />}
       {iltst.map((item) => {
         return (
           <Item
