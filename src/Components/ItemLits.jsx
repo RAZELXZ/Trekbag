@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { itemList } from "../lib/constants";
 
-const ItemLits = () => {
-  const [iltst, setIlist] = useState(itemList);
+const ItemLits = ({ iltst }) => {
   return (
     <ul>
       {iltst.map((item) => {
