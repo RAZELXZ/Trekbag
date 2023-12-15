@@ -16,14 +16,4 @@ export const itemList = [
     name: "phone screen",
     packed: false,
   },
-  {
-    id: "3",
-    name: "phone",
-    packed: true,
-  },
-  {
-    id: "4",
-    name: "good mood",
-    packed: true,
-  },
 ];

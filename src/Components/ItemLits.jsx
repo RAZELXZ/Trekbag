@@ -1,10 +1,17 @@
 import React from "react";
 
-const ItemLits = ({ iltst }) => {
+const ItemLits = ({ iltst, handleDeleteItem, handleToggleItem }) => {
   return (
     <ul>
       {iltst.map((item) => {
-        return <Item item={item} key={item.id} />;
+        return (
+          <Item
+            item={item}
+            key={item.id}
+            handleDeleteItem={handleDeleteItem}
+            handleToggleItem={handleToggleItem}
+          />
+        );
       })}
     </ul>
   );
@@ -12,14 +19,18 @@ const ItemLits = ({ iltst }) => {
 
 export default ItemLits;
 
-const Item = ({ item }) => {
+const Item = ({ item, handleDeleteItem, handleToggleItem }) => {
   return (
     <li className="item">
       <label>
-        <input type="checkbox" checked={item.packed} />
+        <input
+          type="checkbox"
+          checked={item.packed}
+          onChange={() => handleToggleItem(item.id)}
+        />
         {item.name}
       </label>
-      <button>⚓</button>
+      <button onClick={() => handleDeleteItem(item.id)}>⚓</button>
     </li>
   );
 };

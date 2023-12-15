@@ -36,13 +36,32 @@ function App() {
     });
     setIlist(newList);
   };
+
+  const handleDeleteItem = (id) => {
+    const newList = iltst.filter((item) => item.id !== id);
+    setIlist(newList);
+  };
+
+  const handleToggleItem = (id) => {
+    const newList = iltst.map((item) => {
+      if (item.id === id) {
+        return { ...item, packed: !item.packed };
+      }
+      return item;
+    });
+    setIlist(newList);
+  };
   return (
     <>
       <BackgroundHeading />
 
       <main>
         <Header />
-        <ItemLits iltst={iltst} />
+        <ItemLits
+          iltst={iltst}
+          handleDeleteItem={handleDeleteItem}
+          handleToggleItem={handleToggleItem}
+        />
         <Sidebar
           handleAddItem={handleAddItem}
           handleDeleteAllItems={handleDeleteAllItems}
