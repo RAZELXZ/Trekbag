@@ -21,6 +21,21 @@ function App() {
   const handleDeleteAllItems = () => {
     setIlist([]);
   };
+  const handleReset = () => {
+    setIlist(itemList);
+  };
+  const handleMarkAllComplete = () => {
+    const newList = iltst.map((item) => {
+      return [...item, (packed = true)];
+    });
+    setIlist(newList);
+  };
+  const handleMarkAllIncomplete = () => {
+    const newList = iltst.map((item) => {
+      return [...item, (packed = false)];
+    });
+    setIlist(newList);
+  };
   return (
     <>
       <BackgroundHeading />
@@ -31,6 +46,9 @@ function App() {
         <Sidebar
           handleAddItem={handleAddItem}
           handleDeleteAllItems={handleDeleteAllItems}
+          handleReset={handleReset}
+          handleMarkAllComplete={handleMarkAllComplete}
+          handleMarkAllIncomplete={handleMarkAllIncomplete}
         />
       </main>
 

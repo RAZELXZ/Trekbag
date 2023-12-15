@@ -1,9 +1,9 @@
 import React from "react";
 
-const Button = ({ type, text, onDeleteAllItems }) => {
+const Button = ({ type, text, onClick }) => {
   return (
     <button
-      onClick={onDeleteAllItems}
+      onClick={onClick}
       className={`btn ${type === "secondary" ? "btn--secondary" : ""}`}
     >
       {" "}
