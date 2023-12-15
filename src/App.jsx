@@ -26,13 +26,13 @@ function App() {
   };
   const handleMarkAllComplete = () => {
     const newList = iltst.map((item) => {
-      return [...item, (packed = true)];
+      return { ...item, packed: true };
     });
     setIlist(newList);
   };
   const handleMarkAllIncomplete = () => {
     const newList = iltst.map((item) => {
-      return [...item, (packed = false)];
+      return { ...item, packed: false };
     });
     setIlist(newList);
   };
