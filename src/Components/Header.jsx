@@ -2,11 +2,13 @@ import React from "react";
 import Logo from "./Logo";
 import Counter from "./Counter";
 
-const Header = () => {
+const Header = ({ iltst }) => {
+  const bag = iltst.length;
+  const in_bag = iltst.filter((item) => item.packed).length;
   return (
     <header>
       <Logo />
-      <Counter />
+      <Counter bag={bag} in_bag={in_bag} />
     </header>
   );
 };

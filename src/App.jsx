@@ -56,7 +56,7 @@ function App() {
       <BackgroundHeading />
 
       <main>
-        <Header />
+        <Header iltst={iltst} />
         <ItemLits
           iltst={iltst}
           handleDeleteItem={handleDeleteItem}
