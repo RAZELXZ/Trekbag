@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BackgroundHeading from "./Components/BackgroundHeading";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
@@ -8,7 +8,8 @@ import { itemList } from "./lib/constants";
 import "./index.css";
 
 function App() {
-  const [iltst, setIlist] = useState(itemList);
+  const localstorageitems = JSON.parse(localStorage.getItem("iltst"));
+  const [iltst, setIlist] = useState(localstorageitems || itemList);
 
   const handleAddItem = (text) => {
     const newItem = {
@@ -51,6 +52,10 @@ function App() {
     });
     setIlist(newList);
   };
+
+  useEffect(() => {
+    localStorage.setItem("iltst", JSON.stringify(iltst));
+  }, [iltst]);
   return (
     <>
       <BackgroundHeading />

@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import EmptyView from "./EmptyView";
+import Select from "react-select";
+
+const sortingOptions = [
+  {
+    label: "Sort by default",
+    value: "default",
+  },
+  {
+    label: "Sort by packed",
+    value: "packed",
+  },
+  {
+    label: "Sort by unpacked",
+    value: "unpacked",
+  },
+];
 
 const ItemLits = ({ iltst, handleDeleteItem, handleToggleItem }) => {
+  const [sortby, setSortby] = useState("default");
+  const sortedItems = [...iltst].sort((a, b) => {
+    if (sortby === "packed") {
+      return b.packed - a.packed;
+    }
+    if (sortby === "unpacked") {
+      return a.packed - b.packed;
+    }
+    return;
+  });
   return (
     <ul className="item-list">
       {iltst.length === 0 && <EmptyView />}
-      {iltst.map((item) => {
+      {iltst.length > 0 ? (
+        <section className="sorting">
+          <Select
+            options={sortingOptions}
+            defaultValue={sortingOptions[0]}
+            onChange={(option) => setSortby(option.value)}
+          />
+        </section>
+      ) : null}
+      {sortedItems.map((item) => {
         return (
           <Item
             item={item}
