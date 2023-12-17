@@ -2,15 +2,27 @@ import React, { useContext } from "react";
 import AddItemForm from "./AddItemForm";
 import ButtonGroup from "./ButtonGroup";
 import { useItemContext } from "../lib/hooks";
+import { useItemsStore } from "../stores/itemsStore";
 
 const Sidebar = () => {
-  const {
+  {
+    /*const {
     handleAddItem,
     handleDeleteAllItems,
     handleReset,
     handleMarkAllComplete,
     handleMarkAllIncomplete,
-  } = useItemContext();
+  } = useItemContext();*/
+  }
+  const handleAddItem = useItemsStore((state) => state.addItem);
+  const handleDeleteAllItems = useItemsStore((state) => state.deleteAllItems);
+  const handleReset = useItemsStore((state) => state.resetToInitial);
+  const handleMarkAllComplete = useItemsStore(
+    (state) => state.markAllAsComplete
+  );
+  const handleMarkAllIncomplete = useItemsStore(
+    (state) => state.markAllIncomplete
+  );
   return (
     <div className="sidebar">
       <AddItemForm onAddItem={handleAddItem} />

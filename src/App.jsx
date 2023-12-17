@@ -13,11 +13,11 @@ function App() {
       <BackgroundHeading />
 
       <main>
-        <ItemComtextProvider>
-          <Header />
-          <ItemLits />
-          <Sidebar />
-        </ItemComtextProvider>
+        {/*<ItemComtextProvider>*/}
+        <Header />
+        <ItemLits />
+        <Sidebar />
+        {/*</ItemComtextProvider>*/}
       </main>
 
       <Footer />
